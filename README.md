@@ -5,7 +5,7 @@ Docker image for PhpMetrics
 
 To launch the phpMetrics into the container, run:
 
-    docker run --rm --user $(id -u):$(id -g) --volume $(pwd):/data/www nicodocker89:phpmetrics <options> ${ROOT_FOLDER}
+    docker run --rm --user $(id -u):$(id -g) --volume $(pwd):/data/www nicodocker91/phpmetrics <options> ${ROOT_FOLDER}
 
 ## Volumes
 
@@ -17,5 +17,5 @@ The entrypoint is `/data/www`.
 
 Run the following command to read all options available:
 
-    docker run --rm nicodocker89:phpmetrics --help
+    docker run --rm nicodocker91/phpmetrics --help
 
