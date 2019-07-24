@@ -7,7 +7,9 @@ RUN PHP_METRICS_VERSION=$(curl -Ls https://raw.githubusercontent.com/phpmetrics/
     && chmod +x /usr/local/bin/phpmetrics \
     # Install git to be able to run PhpMetrics with option "--git"
     && apk add --no-cache git \
-    && rm -rf /var/cache/apk/* /var/tmp/* /tmp/*
+    && rm -rf /var/cache/apk/* /var/tmp/* /tmp/* \
+    # Not to have the "too many files" error
+    && git config --global --add diff.renames 0
 
 VOLUME ["/data"]
 WORKDIR /data/www
